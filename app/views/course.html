@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+    <header>
+      <!--  <p class="introHL">add a new course.</p>-->
+    </header>
+    <h1>Course: {{ course['title'] }}</h1>
+    <div id="wrapper">
+      {% for course in all_courses: %}
+
+        <strong>Course (ID {{ course['id'] }}):</strong> {{ course['title'] }}
+        <strong>Description:</strong> {{ course['description'] }}
+        <strong>Created at:</strong> {{ course['created_at'] }}
+        <hr>
+      {% endfor %}
+    </div>
+    <form action="/delete" method='post'>
+    <h3>Please press button to delete the course</h3>
+      <input type="submit" value="delete course">
+    </form>
+
+  </body>
+</html>
