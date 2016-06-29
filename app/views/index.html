@@ -49,7 +49,7 @@
             <td>{{ course['title'] }}</td>
             <td>{{ course['description'] }}</td>
             <td>{{ course['created_at'] }}</td>
-            <td><li role="presentation"><a href="/delete">DELETE</a></li></td>                                      <!--<a href="/{{ course['id'] }}">delete</a></td>-->
+            <td><li role="presentation"><a href="/delete{{course['id']}}">DELETE</a></li></td>                                      <!--<a href="/{{ course['id'] }}">delete</a></td>-->
           </tr>
           {% endfor %}
         </tbody>

@@ -17,14 +17,15 @@ class Courses(Controller):
         self.models['Course'].add_course(request.form)
         return redirect ('/')
 
-    def show(self):
-        return self.load_view('index.html', all_courses=courses)
+    def show(self, id):
+        course = self.models['Course'].get_course(id)
+        return self.load_view('course.html', course=course[0])
 
      # This is how a method used to delete a course would look
      # We would set up a POST route for this method
-    def delete(self, course_id):
-        self.models['Course'].delete_course(course_id)
-        return self.load_view('course.html')
+    def delete(self, id):
+        course = self.models['Course'].delete_course(id)
+        return redirect('/')
 
 
 

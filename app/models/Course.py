@@ -26,7 +26,7 @@ class Course(Model):
       # run the update
       return self.db.query_db(query, data)
 
-    def delete_course(self, course_id):
-      query = "DELETE FROM courses WHERE id = :course_id"
-      data = { "course_id": course_id }
-      return self.db.query_db(query, data)
+    def delete_course(self, id):
+        query = "DELETE FROM courses WHERE id = :id"
+        data = {'id': id}
+        return self.db.query_db(query, data)
